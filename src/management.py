@@ -2,7 +2,6 @@ import psycopg2
 from sqlalchemy import create_engine
 
 from .main import pg_dsn
-from .models import Base
 from .settings import Settings
 
 
