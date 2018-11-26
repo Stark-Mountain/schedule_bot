@@ -26,4 +26,8 @@ run:
 .PHONY: deploy
 deploy:
 	docker build -t schedulebot_prod -f Dockerfile.prod .
-	docker-compose -f production.yaml up
+	docker-compose -f production.yaml up -d
+
+.PHONY: stop
+stop:
+	docker-compose -f production.yaml stop
