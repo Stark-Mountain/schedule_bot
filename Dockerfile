@@ -3,8 +3,9 @@ from python:3
 COPY . /app
 WORKDIR /app
 
-RUN pip install pipenv
+RUN pip install -r requirements/dev.txt
 
-RUN pipenv install --system --deploy
+EXPOSE 8000
 
-CMD ["adev", "runserver", "src/main.py"]
+CMD ls
+CMD ["adev", "runserver"]
