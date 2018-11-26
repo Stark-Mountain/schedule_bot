@@ -11,6 +11,16 @@ mounted.
 make run
 ```
 
+## Testing
+
+[Pytest for
+aiohttp](https://aiohttp.readthedocs.io/en/stable/testing.html#pytest-example),
+run with:
+
+``` shell
+make test
+```
+
 ## Production
 
 Production build is bit harder, we use caddy for easy ssl cert management:
@@ -35,14 +45,14 @@ Possibly, webpack would be used for bundling js for admin dashboard to caddy's c
 
 - [ ] Project description
 - [X] local docker development
-- [ ] test structure
-- [ ] ci/cd
+- [X] test structure
 - [ ] production configuration with caddy
 - [ ] aiotg (note what in production bots should work with webhook and with
       polling during local dev)
 - [ ] Database initialization & middleware
 - [ ] create aiohttp project template with vuejs
-
 - [ ] db schema
+
+- [ ] ci/cd
 - [ ] REA parser implementation
 - [ ] vk & fb support
