@@ -1,4 +1,4 @@
-localhost {
+0.0.0.0:80 {
     root /var/www/project/folder
     proxy / web:8000 {
         transparent
