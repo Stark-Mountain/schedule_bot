@@ -11,7 +11,13 @@ testcov:
 reset-database:
 	python -c "from src.management import prepare_database; prepare_database(True)"
 
+.PHONY: build
+build:
+	docker build -t schedulebot .
+
+.PHONY: compose
+run:
+	docker-compose up
 
 .PHONY: run
-run:
-	pipenv run adev runserver
+run: build compose

@@ -30,7 +30,7 @@ async def index(request):
     ctx = dict(
         title=request.app['name'],
         styles_css_url=request.app['static_root_url'] + '/styles.css',
-        content="<p>Success! you've setup a basic aiohttp app. And autoreload is working!</p>",
+        content="<p>Just fucking great! you've setup a basic aiohttp app. And autoreload is working!</p>",
     )
     # with the base web.Response type we have to manually set the content type, otherwise text/plain will be used.
     return web.Response(text=BASE_PAGE.format(**ctx), content_type='text/html')

@@ -4,7 +4,6 @@ Schedule bot
 ## Development
 
 ``` shell
-pipenv --python 3.7
 make run
 ```
 
