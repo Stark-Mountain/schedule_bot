@@ -1,11 +1,11 @@
 from python:3.7.1-alpine3.8
 
+WORKDIR /app
 # optimize pip dependencies
-ADD requirements/dev.txt /app/requirements.txt
-RUN pip install -r /app/requirements.txt
+ADD ./requirements /app/requirements
+RUN pip install -r /app/requirements/dev.txt
 
 COPY . /app
-WORKDIR /app
 
 EXPOSE 8000
 

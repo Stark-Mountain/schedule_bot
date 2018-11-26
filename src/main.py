@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from aiohttp import web
-from aiopg.sa import create_engine
+# from aiopg.sa import create_engine
 from sqlalchemy.engine.url import URL
 
 from .settings import Settings

@@ -22,3 +22,8 @@ reset-database:
 run:
 	docker build -t schedulebot -f Dockerfile .
 	docker-compose up
+
+.PHONY: deploy
+deploy:
+	docker build -t schedulebot_prod -f Dockerfile.prod .
+	docker-compose -f production.yaml up
