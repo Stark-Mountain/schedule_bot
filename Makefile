@@ -1,23 +1,24 @@
-.PHONY: test
-test:
-	pytest --cov=src
+.PHONY: clear
+clear:
+	find . -name '*.pyc' -delete
 
 .PHONY: testcov
 testcov:
 	pytest --cov=src && (echo "building coverage html, view at './htmlcov/index.html'"; coverage html)
 
+.PHONY: runtest
+test:
+	docker build -t schedulebot_test -f Dockerfile.testing .
+	docker run schedulebot_test
+
+.PHONY: test
+test: clear runtest
 
 .PHONY: reset-database
 reset-database:
 	python -c "from src.management import prepare_database; prepare_database(True)"
 
-.PHONY: build
-build:
-	docker build -t schedulebot .
-
-.PHONY: compose
-run:
-	docker-compose up
-
 .PHONY: run
-run: build compose
+run:
+	docker build -t schedulebot -f Dockerfile .
+	docker-compose up

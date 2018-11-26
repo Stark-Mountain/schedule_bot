@@ -1,9 +1,11 @@
 from python:3
 
+# optimize pip dependencies
+ADD requirements/dev.txt /app/requirements.txt
+RUN pip install -r /app/requirements.txt
+
 COPY . /app
 WORKDIR /app
-
-RUN pip install -r requirements/dev.txt
 
 EXPOSE 8000
 

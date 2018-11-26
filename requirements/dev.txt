@@ -1,4 +1,1 @@
-aiohttp
-aiopg
-sqlalchemy
 aiohttp-devtools

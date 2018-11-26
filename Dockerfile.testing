@@ -1,0 +1,10 @@
+from python:3
+
+# optimize pip dependencies
+ADD requirements/testing.txt /app/testing.txt
+RUN pip install -r /app/testing.txt
+
+COPY . /app
+WORKDIR /app
+
+CMD ["pytest", "tests/"]
