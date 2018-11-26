@@ -3,7 +3,7 @@ Schedule bot
 
 ## Development
 
-Since we cool modern boys, we use docker for both dev & prod (for possible quick
+Since we're cool and modern boys, we use docker for both dev & prod (for possible quick
 scaling? :D). Local dev is simple: just run aiohttp service in docker with src
 mounted.
 

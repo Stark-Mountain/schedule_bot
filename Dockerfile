@@ -1,4 +1,4 @@
-from python:3
+from python:3.7.1-alpine3.8
 
 # optimize pip dependencies
 ADD requirements/dev.txt /app/requirements.txt
