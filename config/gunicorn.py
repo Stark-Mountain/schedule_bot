@@ -1,7 +1,7 @@
 import multiprocessing
 
-# listen to port 5858 on all available network interfaces
-bind = "0.0.0.0:5858"
+# listen to port 8000 on all available network interfaces
+bind = "0.0.0.0:8000"
 
 # Run the aiohttp app in multiple processes
 workers = multiprocessing.cpu_count() * 2 + 1

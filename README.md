@@ -29,9 +29,6 @@ Production build is bit harder, we use caddy for easy ssl cert management:
 
 ```
 
-They communicate via socket, which is mounted to both containers. Database
-configured separately.
-
 This is minimal working example, supervisord may be added for ensuring what
 docker services is always working.
 

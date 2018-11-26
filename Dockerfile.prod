@@ -9,5 +9,4 @@ COPY . /app
 
 EXPOSE 8000
 
-CMD ["gunicorn", "src.gunicorn:app", "--bind", "0.0.0.0:8000", \
-"--worker-class", "aiohttp.GunicornWebWorker"]
+CMD ["gunicorn", "src.gunicorn:app", "-c", "config/gunicorn.py"]
