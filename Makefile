@@ -21,7 +21,7 @@ reset-database:
 .PHONY: run
 run:
 	docker build -t schedulebot -f Dockerfile .
-	docker-compose up
+	docker-compose -f docker-compose.yaml up
 
 .PHONY: deploy
 deploy:
@@ -31,3 +31,7 @@ deploy:
 .PHONY: stop
 stop:
 	docker-compose -f production.yaml stop
+
+.PHONY: psql
+psql:
+	psql -U postgres -p 5433 -h localhost
