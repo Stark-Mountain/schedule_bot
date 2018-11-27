@@ -6,6 +6,9 @@ data_path="./data/certbot"
 email= $CERTBOT_EMAIL #Adding a valid address is strongly recommended
 staging=0 #Set to 1 if you're just testing your setup to avoid hitting request limits
 
+# TODO: explain
+cd ..
+
 echo "### Preparing directories in $data_path ..."
 rm -Rf "$data_path"
 mkdir -p "$data_path/www"

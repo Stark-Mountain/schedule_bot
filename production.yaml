@@ -30,6 +30,11 @@ services:
       - .env
     networks:
       - web_nw
+    entrypoint:
+      - gunicorn
+      - src.gunicorn:app
+      - -c
+      - config/gunicorn.py
 
 networks:
   web_nw:

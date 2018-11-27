@@ -8,7 +8,9 @@ services:
     build: .
     ports:
       - "8000:8000"
-      - "8001:8001"
     volumes: ['./src:/app/src']
     env_file:
       - .env
+    entrypoint:
+      - adev
+      - runserver

@@ -20,12 +20,12 @@ reset-database:
 
 .PHONY: run
 run:
-	docker build -t schedulebot -f Dockerfile .
+	docker build -t schedulebot .
 	docker-compose -f docker-compose.yaml up
 
 .PHONY: deploy
 deploy:
-	docker build -t schedulebot_prod -f Dockerfile.prod .
+	docker build --build-arg requirements_file=prod.txt -t schedulebot_prod .
 	docker-compose -f production.yaml up -d
 
 .PHONY: stop

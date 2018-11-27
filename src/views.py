@@ -28,7 +28,7 @@ async def index(request):
     """
     ctx = dict(
         title=request.app['name'],
-        content="<p>Just freaking great! you've setup a basic aiohttp app. And autoreload is working!</p>",
+        content="<p>Just great! you've setup a basic aiohttp app. And autoreload is working!</p>",
     )
     # with the base web.Response type we have to manually set the content type, otherwise text/plain will be used.
     return web.Response(text=BASE_PAGE.format(**ctx), content_type='text/html')
