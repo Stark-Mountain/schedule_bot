@@ -1,6 +1,6 @@
 #!/bin/bash
 
-domains= $CERTBOT_DOMAINS
+domain= $CERTBOT_DOMAIN
 rsa_key_size=4096
 data_path="./data/certbot"
 email= $CERTBOT_EMAIL #Adding a valid address is strongly recommended
@@ -60,7 +60,7 @@ docker-compose -f production.yaml run --rm --entrypoint "\
   certbot certonly --webroot -w /var/www/certbot \
     $staging_arg \
     $email_arg \
-    $domain_args \
+    -d $domain \
     --rsa-key-size $rsa_key_size \
     --agree-tos \
     --force-renewal" certbot
