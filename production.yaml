@@ -33,6 +33,7 @@ services:
     volumes:
       - ./config/Caddyfile:/etc/Caddyfile
       - ./static:/srv/static
+      - ./.caddy:/root/.caddy
     restart: always
     ports:
       - 80:80
