@@ -14,8 +14,7 @@ make run
 
 ## Testing
 
-[Pytest for
-aiohttp](https://aiohttp.readthedocs.io/en/stable/testing.html#pytest-example),
+[Pytest for aiohttp](https://aiohttp.readthedocs.io/en/stable/testing.html#pytest-example),
 run with:
 
 ``` shell
@@ -30,9 +29,11 @@ re-create models from scratch every time.
 Production build is bit harder, we use caddy & certbot for easy ssl cert management:
 
 ``` shell
-
+# populate examples with actual data
+cp .example.env .env
+cp config/Caddyfile.example config/Caddyfile
+sudo make deploy
 ```
-
 
 Possibly, webpack would be used for bundling js for admin dashboard to caddy's container.
 

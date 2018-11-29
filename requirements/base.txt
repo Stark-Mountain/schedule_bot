@@ -1,3 +1,4 @@
-aiohttp
-sqlalchemy
-aiopg
+aiohttp==3.4.4
+sqlalchemy==1.2.14
+aiopg==0.15.0
+aiotg==0.9.9
