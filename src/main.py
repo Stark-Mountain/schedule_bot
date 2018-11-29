@@ -4,6 +4,7 @@ from aiohttp import web
 from aiopg.sa import create_engine
 from sqlalchemy.engine.url import URL
 
+from .bots.tg import register
 from .settings import Settings
 from .views import index
 from .middlewares import middlewares
@@ -41,6 +42,11 @@ def setup_routes(app):
     app.router.add_get('/', index, name='index')
 
 
+def setup_bots(app):
+    # TODO
+    pass
+
+
 async def create_app():
     app = web.Application(middlewares=middlewares)
     settings = Settings()
@@ -53,4 +59,7 @@ async def create_app():
     app.on_cleanup.append(cleanup)
 
     setup_routes(app)
+
+    setup_bots(app)
+
     return app
