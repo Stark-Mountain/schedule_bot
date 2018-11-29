@@ -7,6 +7,7 @@ services:
       - database_nw
     env_file:
       - .env
+    restart: always
 
   web:
     image: schedulebot_prod
@@ -17,6 +18,7 @@ services:
       - database_nw
     depends_on:
       - database
+    restart: always
     entrypoint:
       - gunicorn
       - src.gunicorn:app
@@ -29,6 +31,7 @@ services:
     volumes:
       - ./config/Caddyfile:/etc/Caddyfile
       - ./static:/srv/static
+    restart: always
     ports:
       - 80:80
       - 443:443
