@@ -8,6 +8,8 @@ services:
       - database_nw
     env_file:
       - .env
+    volumes:
+      - ./data:/var/lib/postgresql/data
 
   web:
     build: .

@@ -8,6 +8,8 @@ services:
     env_file:
       - .env
     restart: always
+    volumes:
+      - ./data:/var/lib/postgresql/data
 
   web:
     image: schedulebot_prod

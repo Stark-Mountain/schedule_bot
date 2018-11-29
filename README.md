@@ -38,17 +38,21 @@ Possibly, webpack would be used for bundling js for admin dashboard to caddy's c
 
 ## TODO:
 
+Infrastructure tasks:
 - [ ] Project description
 - [X] local docker development
 - [X] test structure
 - [X] production configuration with nginx
-- [ ] aiotg (note what in production bots should work with webhook and with
-      polling during local dev)
+- [ ] aiotg (polling)
 - [x] Database initialization
 - [x] Middleware
 - [ ] db migrations
 - [ ] db schema
-
 - [ ] ci/cd
+- [ ] rolling updates (zero downtime)
+- [ ] Remove Dockerfile.testing
+
+Coding tasks:
+- [ ] aiotg (webhook for production)
 - [ ] REA parser implementation
 - [ ] vk & fb support

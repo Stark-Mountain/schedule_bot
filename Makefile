@@ -8,7 +8,8 @@ testcov:
 
 .PHONY: runtest
 test:
-	docker build -t schedulebot_test -f Dockerfile.testing .
+	docker build --build-arg requirements_file=testing.txt \
+		-t schedulebot_test -f Dockerfile.testing .
 	docker run schedulebot_test
 
 .PHONY: test
