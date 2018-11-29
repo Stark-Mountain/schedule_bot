@@ -1,5 +1,6 @@
 .env
 *.pyc
+config/Caddyfile
 
 venv/
 data/
