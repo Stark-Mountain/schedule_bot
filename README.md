@@ -27,19 +27,12 @@ re-create models from scratch every time.
 
 ## Production
 
-Production build is bit harder, we use certbot for easy ssl cert management:
+Production build is bit harder, we use caddy & certbot for easy ssl cert management:
 
 ``` shell
 
 ```
 
-[More about SSL, certbot and nginx conf](https://medium.com/@pentacent/nginx-and-lets-encrypt-with-docker-in-less-than-5-minutes-b4b8a60d3a71)
-This is minimal working example, supervisord may be added for ensuring what
-docker services is always working.
-
-Storing nginx config in open source git repo is ambiguous idea, but thing is:
-nobody would never know server's location! Users communicate only with vk & tg &
-fb, so we're safe.
 
 Possibly, webpack would be used for bundling js for admin dashboard to caddy's container.
 

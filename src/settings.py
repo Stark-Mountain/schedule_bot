@@ -18,12 +18,12 @@ class Settings:
 
     Or, passing the custom setting as a keyword argument when initialising settings (useful when testing)
     """
-    _ENV_PREFIX = 'APP_'
-    DB_NAME = 'test'
-    DB_USER = 'postgres'
+    _ENV_PREFIX = 'SCHEDULEBOT_'
+    DB_NAME = Required(str)
+    DB_USER = Required(str)
     DB_PASSWORD = Required(str)
-    DB_HOST = 'localhost'
-    DB_PORT = '5432'
+    DB_HOST = Required(str)
+    DB_PORT = Required(str)
 
     def __init__(self, **custom_settings):
         """

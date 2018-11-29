@@ -1,16 +1,29 @@
 version: "3"
 services:
-  db:
+  database:
     image: postgres
     ports:
-      - "5433:5432"
+      - "5432:5432"
+    networks:
+      - database_nw
+    env_file:
+      - .env
+
   web:
     build: .
     ports:
       - "8000:8000"
     volumes: ['./src:/app/src']
+    networks:
+      - database_nw
     env_file:
       - .env
+    depends_on:
+      - database
     entrypoint:
       - adev
       - runserver
+
+networks:
+  database_nw:
+    driver: bridge

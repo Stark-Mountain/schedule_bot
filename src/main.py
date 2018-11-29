@@ -1,11 +1,12 @@
 from pathlib import Path
 
 from aiohttp import web
-# from aiopg.sa import create_engine
+from aiopg.sa import create_engine
 from sqlalchemy.engine.url import URL
 
 from .settings import Settings
 from .views import index
+from .middlewares import middlewares
 
 
 THIS_DIR = Path(__file__).parent
@@ -41,16 +42,15 @@ def setup_routes(app):
 
 
 async def create_app():
-    app = web.Application()
+    app = web.Application(middlewares=middlewares)
     settings = Settings()
     app.update(
         name='test',
         settings=settings
     )
 
-    # FIXME: database
-    # app.on_startup.append(startup)
-    # app.on_cleanup.append(cleanup)
+    app.on_startup.append(startup)
+    app.on_cleanup.append(cleanup)
 
     setup_routes(app)
     return app
