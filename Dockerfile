@@ -11,6 +11,8 @@ ARG requirements_file=dev.txt
 
 WORKDIR /app
 # optimize pip dependencies
+# FIXME such optimization ignore new pip dependencies and requires
+# container prune
 ADD ./requirements /app/requirements
 RUN pip install -r /app/requirements/$requirements_file
 

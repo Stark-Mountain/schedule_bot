@@ -1,5 +1,6 @@
 from pathlib import Path
 
+import asyncio
 from aiohttp import web
 from aiopg.sa import create_engine
 from sqlalchemy.engine.url import URL
@@ -44,7 +45,11 @@ def setup_routes(app):
 
 def setup_bots(app):
     # TODO
-    pass
+    tokens = []
+    for token in tokens:
+        bot = register(token)
+        loop = asyncio.get_event_loop()
+        app['bots'] = loop.create_task(bot.loop())
 
 
 async def create_app():

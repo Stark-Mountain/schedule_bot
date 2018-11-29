@@ -22,7 +22,7 @@ reset-database:
 .PHONY: run
 run:
 	docker build -t schedulebot .
-	docker-compose -f docker-compose.yaml up --force-recreate
+	docker-compose -f docker-compose.yaml up
 
 .PHONY: deploy
 deploy:
@@ -36,3 +36,7 @@ stop:
 .PHONY: psql
 psql:
 	psql -U schedulebot -p 5432 -h localhost
+
+.PHONY: reset
+reset:
+	docker system prune -a

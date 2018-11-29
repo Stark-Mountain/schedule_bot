@@ -21,7 +21,7 @@ services:
     env_file:
       - .env
     depends_on:
-      - database
+      - "database"
     entrypoint:
       - adev
       - runserver
